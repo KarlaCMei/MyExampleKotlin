@@ -6,7 +6,7 @@ import okhttp3.Response
 
 class Interceptor: Interceptor {
 
-    private val APIKEY_NAME = "api_key"
+    private val APIKEY_NAME = "apikey"
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
