@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class SuperHeroViewModel : ViewModel() {
     var getSuperHeroUseCase = GetSuperHeroesUseCase()
-    val superHeroModel = MutableLiveData<SuperHeroModel>()
+    val superHeroModel = MutableLiveData<com.karla.myexamplekotlin.data.model.Result>()
     val isLoading = MutableLiveData<Boolean>()
     var getRandomSuperHeroUserCase = GetRandomSuperHeroUserCase()
 
@@ -32,7 +32,7 @@ class SuperHeroViewModel : ViewModel() {
         isLoading.postValue(true)
         val superhero = getRandomSuperHeroUserCase()
         if (superhero != null) {
-            superHeroModel.postValue(superhero)
+            //superHeroModel.postValue(superhero)
         }
         isLoading.postValue(false)
 

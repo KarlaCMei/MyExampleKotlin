@@ -1,6 +1,7 @@
 package com.karla.myexamplekotlin.ui.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -22,7 +23,9 @@ class MainActivity : AppCompatActivity() {
         superHeroViewModel.onCreate()
 
         superHeroViewModel.superHeroModel.observe(this, Observer { currentSuperHero ->
-            Glide.with(this).load(currentSuperHero.image).into(binding.imgSuperHero)
+
+            Log.e("URL ", "${currentSuperHero.image.urlImage}.jpg" )
+            Glide.with(this).load( "${currentSuperHero.image.urlImage}.jpg").into(binding.imgSuperHero)
             binding.txtSuperHeroName.text = currentSuperHero.name
         })
         superHeroViewModel.isLoading.observe(this, Observer {

@@ -8,10 +8,10 @@ import kotlinx.coroutines.withContext
 class SuperHeroService{
 
     private val retrofit = RetrofitHelper.getRetrofit()
-    suspend fun getQuotes(): List<SuperHeroModel> {
+    suspend fun getQuotes(): List<com.karla.myexamplekotlin.data.model.Result> {
         return withContext(Dispatchers.Main) {
             val response = retrofit.create(SuperHeroApiClient::class.java).getAllSuperHeroes()
-            response.body() ?: emptyList()
+            response.body()!!.datos.results ?: emptyList()
         }
     }
 }

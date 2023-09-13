@@ -7,7 +7,7 @@ import com.karla.myexamplekotlin.data.network.SuperHeroService
 class SuperHeroRepository {
 
     private val api = SuperHeroService()
-    suspend fun getAllSuperHeroes():List<SuperHeroModel>{
+    suspend fun getAllSuperHeroes():List<com.karla.myexamplekotlin.data.model.Result>{
         val response = api.getQuotes()
         SuperHeroProvider.superHero = response
         return response

@@ -6,7 +6,7 @@ import com.karla.myexamplekotlin.data.model.SuperHeroProvider
 
 class GetRandomSuperHeroUserCase {
 
-    operator fun invoke():SuperHeroModel?{
+    operator fun invoke():com.karla.myexamplekotlin.data.model.Result?{
         val quotes = SuperHeroProvider.superHero
         if(!quotes.isNullOrEmpty()){
             val randomNumber = (quotes.indices).random()

@@ -5,6 +5,6 @@ import com.karla.myexamplekotlin.data.model.SuperHeroModel
 
 class GetSuperHeroesUseCase {
     private val repository = SuperHeroRepository()
-    suspend operator fun invoke():List<SuperHeroModel>? = repository.getAllSuperHeroes()
+    suspend operator fun invoke():List<com.karla.myexamplekotlin.data.model.Result>? = repository.getAllSuperHeroes()
 
 }

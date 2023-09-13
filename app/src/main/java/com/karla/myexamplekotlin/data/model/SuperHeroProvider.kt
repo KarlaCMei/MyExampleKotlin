@@ -3,7 +3,7 @@ package com.karla.myexamplekotlin.data.model
 class SuperHeroProvider {
 
     companion object {
-        var superHero:List<SuperHeroModel> = emptyList()
+        var superHero:List<com.karla.myexamplekotlin.data.model.Result> = emptyList()
     }
    /* companion object {
 
