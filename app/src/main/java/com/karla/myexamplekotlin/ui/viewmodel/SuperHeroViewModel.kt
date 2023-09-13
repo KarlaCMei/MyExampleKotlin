@@ -32,7 +32,7 @@ class SuperHeroViewModel : ViewModel() {
         isLoading.postValue(true)
         val superhero = getRandomSuperHeroUserCase()
         if (superhero != null) {
-            //superHeroModel.postValue(superhero)
+            superHeroModel.postValue(superhero)
         }
         isLoading.postValue(false)
 
