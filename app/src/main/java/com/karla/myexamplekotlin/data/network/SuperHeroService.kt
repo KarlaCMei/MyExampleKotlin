@@ -1,17 +1,16 @@
 package com.karla.myexamplekotlin.data.network
 
-import com.karla.myexamplekotlin.core.RetrofitHelper
-import com.karla.myexamplekotlin.data.model.SuperHeroModel
+import com.karla.myexamplekotlin.data.repository.SuperHeroModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class SuperHeroService{
+class SuperHeroService @Inject constructor(private val api: SuperHeroApiClient){
 
-    private val retrofit = RetrofitHelper.getRetrofit()
-    suspend fun getQuotes(): List<com.karla.myexamplekotlin.data.model.Result> {
-        return withContext(Dispatchers.Main) {
-            val response = retrofit.create(SuperHeroApiClient::class.java).getAllSuperHeroes()
-            response.body()!!.datos.results ?: emptyList()
+    suspend fun getSuperHero(): List<SuperHeroModel> {
+        return withContext(Dispatchers.IO) {
+            val response = api.getAllSuperHeroes()
+            response.body() ?: emptyList()
         }
     }
 }

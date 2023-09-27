@@ -1,10 +1,13 @@
 package com.karla.myexamplekotlin.data.model
 
-class SuperHeroProvider {
+import com.karla.myexamplekotlin.data.network.SuperHeroService
+import javax.inject.Inject
+import javax.inject.Singleton
 
-    companion object {
+@Singleton
+class SuperHeroProvider @Inject constructor(){
         var superHero:List<com.karla.myexamplekotlin.data.model.Result> = emptyList()
-    }
+
    /* companion object {
 
         fun random(): SuperHeroModel {

@@ -10,7 +10,9 @@ import com.bumptech.glide.Glide
 import com.karla.myexamplekotlin.R
 import com.karla.myexamplekotlin.databinding.ActivityMainBinding
 import com.karla.myexamplekotlin.ui.viewmodel.SuperHeroViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val superHeroViewModel: SuperHeroViewModel by viewModels()
@@ -33,6 +35,5 @@ class MainActivity : AppCompatActivity() {
         })
         binding.viewContainer.setOnClickListener {
             superHeroViewModel.randomSuperHero() }
-
     }
 }
